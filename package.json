@@ -1,0 +1,24 @@
+{
+  "title": "Material demo",
+  "devDependencies": {
+    "react-scripts": "latest"
+  },
+  "description": "https://github.com/mui-org/material-ui/blob/master/docs/src/pages/components/text-fields/BasicTextFields.js",
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "4.9.1",
+    "@material-ui/lab": "4.0.0-alpha.56",
+    "axios": "0.21.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "5.2.0"
+  },
+  "name": "material-demo-forked",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
