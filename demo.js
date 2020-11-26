@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
     top: "-5vh"
   }
 }));
-export function LoginForm(props) {
+export default function LoginForm(props) {
   var plant_data = JSON.stringify(data);
   console.log("plant_data:::", plant_data);
   if (typeof plant_data !== "undefined") {
@@ -181,9 +181,9 @@ export function LoginForm(props) {
                   <MenuItem value={"DQM"}>DQM</MenuItem>
                 </Select>
 
-                {/* <InputLabel id="demo-simple-select-outlined-label">
-                  Plant
-                </InputLabel> */}
+                <InputLabel id="demo-simple-select-outlined-label">
+                  Type of user
+                </InputLabel>
                 {/* <Select value={Data} onChange={handleChange}>
                   <MenuItem value={"SPOC"}>SPoC</MenuItem>
                   <MenuItem value={"DQM"}>DQM</MenuItem>
