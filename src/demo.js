@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import FormControl from "@material-ui/core/FormControl";
 import { data } from "./data.js";
-import Alert from "@material-ui/lab/Alert";
 import {
   Button,
   Typography,
@@ -66,8 +65,9 @@ export function LoginForm(props) {
   var plant_data = JSON.stringify(data);
   console.log("plant_data:::", plant_data);
   if (typeof plant_data !== "undefined") {
-    //    var jsonParse = JSON.parse(JSON.stringify(plant_data));
-    console.log("plant data is undefined : ");
+    var jsonParse = JSON.parse(plant_data);
+    console.log("jsonParse ", jsonParse);
+    console.log("ty")
   } else {
     console.log(plant_data);
   }
@@ -133,10 +133,9 @@ export function LoginForm(props) {
   };
 
   return (
-    <div className={classes.splitScreen}>
-      <div className={classes.rightPane}>
+
         <Container fixed maxWidth="xs">
-          <div className={classes.paper}>
+      <div className={classes.paper}>
             <Typography
               component="h1"
               variant="h4"
@@ -145,7 +144,7 @@ export function LoginForm(props) {
             >
               Login
             </Typography>
-            <form className={classes.form}>
+       
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -181,38 +180,27 @@ export function LoginForm(props) {
                   <MenuItem value={"DQM"}>DQM</MenuItem>
                 </Select>
 
-                {/* <InputLabel id="demo-simple-select-outlined-label">
-                  Plant
-                </InputLabel> */}
-                {/* <Select value={Data} onChange={handleChange}>
-                  <MenuItem value={"SPOC"}>SPoC</MenuItem>
-                  <MenuItem value={"DQM"}>DQM</MenuItem>
-                </Select> */}
               </FormControl>
               <Button
                 type="submit"
                 fullWidth
-                variant="contained"
                 color="primary"
                 onClick={handleSubmitClick}
                 className={classes.submit}
               >
                 Sign In
-              </Button>
-            </form>
-          </div>
-        </Container>
-      </div>
-      <div>
-        {" "}
-        {flag ? (
-          <Snackbar>
-            <Alert severity="error">Invalid credentials!! Try again..</Alert>
-          </Snackbar>
-        ) : null}
-      </div>
-    </div>
-  );
+              </Button>   </div>
+
+{/* <Typography>{jsonParse[0].plant}</Typography>
+<Typography>{typeof(jsonParse)}</Typography> */}
+
+
+{jsonParse.map(action => (
+<Typography>
+  {action.plant}
+</Typography>
+      ))}
+        </Container>);
 }
 
 export default LoginForm;
